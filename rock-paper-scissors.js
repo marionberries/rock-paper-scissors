@@ -14,10 +14,9 @@
 //  - DONE loop if player does not enter the right values
 //  - DONE capitalize playerChoice
 //  - DONE return playerChoice
-// 3. create rpsRound function
+// 3. DONE create rpsRound function
 //  a. DONE accepts two parameters which are player choice computer choice
-//  e. use if-else to compare player choice and computer choice 
-//  f. go through win conditions first, then draw, else lose
+//  e. DONE use if-else to compare player choice and computer choice 
 
 function computerPlay() {
     const rock = 0;
@@ -50,10 +49,11 @@ function playerChoice() {
     upperCaseChoice = choice.toUpperCase();
 
     if (upperCaseChoice == "END") {
-        alert("Thanks for playing!")
+        alert("Thanks for playing!");
         return "END";
     }
-    if else (upperCaseChoice == "ROCK") {
+
+    else if (upperCaseChoice == "ROCK") {
         return "ROCK";
     }
 
@@ -66,17 +66,69 @@ function playerChoice() {
     }
 
     else {
-        alert('Invalid choice')
-        playerChoice();
+        alert('Invalid choice');
+        return playerChoice();
+    }
+}
+
+function rpsRound() {
+    choice = playerChoice();
+    computerChoice = computerPlay();
+
+    if (choice == "END") {
+        return null;
+    }    
+
+    else if (choice == "ROCK" && computerChoice == "ROCK") {
+        alert(`Player:${choice} PC:${computerChoice}, TIE!`)
+        rpsRound();
     }
 
+    else if (choice == "ROCK" && computerChoice == "PAPER") {
+        alert(`Player:${choice} PC:${computerChoice}, PC WINS!`)
+        rpsRound();
+    }
 
+    else if (choice == "ROCK" && computerChoice == "SCISSORS") {
+        alert(`Player:${choice} PC:${computerChoice}, PLAYER WINS!`)
+        rpsRound();
+    }
+
+    else if (choice == "PAPER" && computerChoice == "ROCK") {
+        alert(`Player:${choice} PC:${computerChoice}, PLAYER WINS!`)
+        rpsRound();
+    }
+
+    else if (choice == "PAPER" && computerChoice == "PAPER") {
+        alert(`Player:${choice} PC:${computerChoice}, TIE!`)
+        rpsRound();
+    }
+
+    else if (choice == "PAPER" && computerChoice == "SCISSORS") {
+        alert(`Player:${choice} PC:${computerChoice}, PC WINS!`)
+        rpsRound();
+    }
+
+    else if (choice == "SCISSORS" && computerChoice == "ROCK") {
+        alert(`Player:${choice} PC:${computerChoice}, PC WINS!`)
+        rpsRound();
+    }
+
+    else if (choice == "SCISSORS" && computerChoice == "PAPER") {
+        alert(`Player:${choice} PC:${computerChoice}, PLAYER WINS!`)
+        rpsRound();
+    }
+
+    else if (choice == "SCISSORS" && computerChoice == "SCISSORS") {
+        alert(`Player:${choice} PC:${computerChoice}, TIE!`)
+        rpsRound();
+    }
+
+    else {
+        console.log(choice);
+        console.log(computerChoice);
+        alert('Something went wrong...');
+    }
 }
 
-function rpsRound(playerChoice, computerChoice) {
-    playerChoice = playerChoice();
-    computerChoice = computerChoice();
-
-    
-    
-}
+rpsRound();
