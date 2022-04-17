@@ -9,17 +9,13 @@
 //  b. DONE assign number to variable (e.g. let rock = 0)
 //  c. DONE use a random number generator to produce a number from 0-2 and store in computerChoice
 //  d. DONE use if-else to return the a string associated with that number (e.g. if rand number is 1, return paper)
-// 2. Create playerChoice function
+// 2. DONE Create playerChoice function
 //  - DONE prompt player for choice
 //  - DONE loop if player does not enter the right values
-//  - capitalize playerChoice
-//  - return playerChoice
+//  - DONE capitalize playerChoice
+//  - DONE return playerChoice
 // 3. create rpsRound function
-//  a. accepts two parameters which are player choice computer choice
-//  b. prompt player for their choice (e.g. rock, paper or scissors) or if they want to exit
-//  - if exit, then close program, else move on to next step
-//  c. convert player choice to uppercase 
-//  c. do not let player input anything other than choice or exit condition
+//  a. DONE accepts two parameters which are player choice computer choice
 //  e. use if-else to compare player choice and computer choice 
 //  f. go through win conditions first, then draw, else lose
 
@@ -57,7 +53,7 @@ function playerChoice() {
         alert("Thanks for playing!")
         return "END";
     }
-    if (upperCaseChoice == "ROCK") {
+    if else (upperCaseChoice == "ROCK") {
         return "ROCK";
     }
 
@@ -77,4 +73,10 @@ function playerChoice() {
 
 }
 
-playerChoice();
+function rpsRound(playerChoice, computerChoice) {
+    playerChoice = playerChoice();
+    computerChoice = computerChoice();
+
+    
+    
+}
