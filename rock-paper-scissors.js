@@ -7,7 +7,7 @@
 // 1. create computerPlay function to have computer spit out a choice
 //  a. declare function (no parameters)
 //  b. assign number to variable (e.g. let rock = 0)
-//  c. use a random number generator to produce a number from 0-2
+//  c. use a random number generator to produce a number from 0-2 and store in computerChoice
 //  d. use if-else to return the a string associated with that number (e.g. if rand number is 1, return paper)
 // 2. create rpsRound function
 //  a. accepts two parameters which are player choice computer choice
@@ -24,6 +24,11 @@ function computerPlay() {
     const paper = 1;
     const scissors = 2;
 
+    let computerChoice = Math.floor(Math.random() * 3); //generates a random number from 0-2 which represents rock, paper, and scissors
     
 
+
+
 }
+
+computerPlay();
