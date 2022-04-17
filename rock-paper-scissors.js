@@ -18,3 +18,12 @@
 //  c. do not let player input anything other than choice or exit condition
 //  e. use if-else to compare player choice and computer choice 
 //  f. go through win conditions first, then draw, else lose
+
+function computerPlay() {
+    const rock = 0;
+    const paper = 1;
+    const scissors = 2;
+
+    
+
+}
