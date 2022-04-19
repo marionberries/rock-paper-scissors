@@ -17,6 +17,9 @@
 // 3. DONE create rpsRound function
 //  a. DONE accepts two parameters which are player choice computer choice
 //  e. DONE use if-else to compare player choice and computer choice 
+// 4. Add rounds
+// 5. keep score
+// 6. declare winner
 
 function computerPlay() {
     const rock = 0;
@@ -71,64 +74,69 @@ function playerChoice() {
     }
 }
 
-function rpsRound() {
+function rpsRound(rounds) {
     choice = playerChoice();
     computerChoice = computerPlay();
+    computerScore = 0;
+    playerScore = 0;
 
     if (choice == "END") {
         return null;
-    }    
+    }  
 
-    else if (choice == "ROCK" && computerChoice == "ROCK") {
-        alert(`Player:${choice} PC:${computerChoice}, TIE!`)
-        rpsRound();
+    for (let i = 0; i <= rounds; i++){
+
+        if (choice == "ROCK" && computerChoice == "ROCK") {
+            alert(`Player:${choice} PC:${computerChoice}, TIE!`)
+        }
+
+        else if (choice == "ROCK" && computerChoice == "PAPER") {
+            alert(`Player:${choice} PC:${computerChoice}, PC WINS!`)
+            computerScore++;
+        }
+
+        else if (choice == "ROCK" && computerChoice == "SCISSORS") {
+            alert(`Player:${choice} PC:${computerChoice}, PLAYER WINS!`)
+            playerScore++;
+        }
+
+        else if (choice == "PAPER" && computerChoice == "ROCK") {
+            alert(`Player:${choice} PC:${computerChoice}, PLAYER WINS!`)
+            playerScore++;
+        }
+
+        else if (choice == "PAPER" && computerChoice == "PAPER") {
+            alert(`Player:${choice} PC:${computerChoice}, TIE!`)
+        }
+
+        else if (choice == "PAPER" && computerChoice == "SCISSORS") {
+            alert(`Player:${choice} PC:${computerChoice}, PC WINS!`)
+            computerScore++;
+        }
+
+        else if (choice == "SCISSORS" && computerChoice == "ROCK") {
+            alert(`Player:${choice} PC:${computerChoice}, PC WINS!`)
+            computerScore++;
+        }
+
+        else if (choice == "SCISSORS" && computerChoice == "PAPER") {
+            alert(`Player:${choice} PC:${computerChoice}, PLAYER WINS!`)
+            playerScore++;
+        }
+
+        else if (choice == "SCISSORS" && computerChoice == "SCISSORS") {
+            alert(`Player:${choice} PC:${computerChoice}, TIE!`)
+        }
+
+        else {
+            console.log(choice);
+            console.log(computerChoice);
+            alert('Something went wrong...');
+        }
     }
 
-    else if (choice == "ROCK" && computerChoice == "PAPER") {
-        alert(`Player:${choice} PC:${computerChoice}, PC WINS!`)
-        rpsRound();
-    }
 
-    else if (choice == "ROCK" && computerChoice == "SCISSORS") {
-        alert(`Player:${choice} PC:${computerChoice}, PLAYER WINS!`)
-        rpsRound();
-    }
-
-    else if (choice == "PAPER" && computerChoice == "ROCK") {
-        alert(`Player:${choice} PC:${computerChoice}, PLAYER WINS!`)
-        rpsRound();
-    }
-
-    else if (choice == "PAPER" && computerChoice == "PAPER") {
-        alert(`Player:${choice} PC:${computerChoice}, TIE!`)
-        rpsRound();
-    }
-
-    else if (choice == "PAPER" && computerChoice == "SCISSORS") {
-        alert(`Player:${choice} PC:${computerChoice}, PC WINS!`)
-        rpsRound();
-    }
-
-    else if (choice == "SCISSORS" && computerChoice == "ROCK") {
-        alert(`Player:${choice} PC:${computerChoice}, PC WINS!`)
-        rpsRound();
-    }
-
-    else if (choice == "SCISSORS" && computerChoice == "PAPER") {
-        alert(`Player:${choice} PC:${computerChoice}, PLAYER WINS!`)
-        rpsRound();
-    }
-
-    else if (choice == "SCISSORS" && computerChoice == "SCISSORS") {
-        alert(`Player:${choice} PC:${computerChoice}, TIE!`)
-        rpsRound();
-    }
-
-    else {
-        console.log(choice);
-        console.log(computerChoice);
-        alert('Something went wrong...');
-    }
 }
 
+function setRounds()
 rpsRound();
