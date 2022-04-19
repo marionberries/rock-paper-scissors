@@ -75,16 +75,18 @@ function playerChoice() {
 }
 
 function rpsRound(rounds) {
-    choice = playerChoice();
-    computerChoice = computerPlay();
+    alert(`You have set ${rounds} rounds`)
     computerScore = 0;
-    playerScore = 0;
-
-    if (choice == "END") {
-        return null;
-    }  
+    playerScore = 0;  
 
     for (let i = 0; i < rounds; i++){
+
+        choice = playerChoice();
+        computerChoice = computerPlay();
+
+        if (choice == "END") {
+            return null;
+        }
 
         if (choice == "ROCK" && computerChoice == "ROCK") {
             alert(`Player:${choice} PC:${computerChoice}, TIE!`)
@@ -129,11 +131,13 @@ function rpsRound(rounds) {
         }
 
         else {
-            console.log(choice);
-            console.log(computerChoice);
+            // console.log(choice);
+            // console.log(computerChoice);
             alert('Something went wrong...');
         }
     }
+
+    alert(`Final score: \n Player: ${playerScore} \n Computer: ${computerScore}`)
 
     if (playerScore > computerScore) {
         alert("You won!")
@@ -157,3 +161,4 @@ function setRounds() {
     rpsRound(rounds);
 }
 
+setRounds();
