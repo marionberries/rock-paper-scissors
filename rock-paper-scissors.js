@@ -84,7 +84,7 @@ function rpsRound(rounds) {
         return null;
     }  
 
-    for (let i = 0; i <= rounds; i++){
+    for (let i = 0; i < rounds; i++){
 
         if (choice == "ROCK" && computerChoice == "ROCK") {
             alert(`Player:${choice} PC:${computerChoice}, TIE!`)
@@ -135,8 +135,25 @@ function rpsRound(rounds) {
         }
     }
 
+    if (playerScore > computerScore) {
+        alert("You won!")
+    }
 
+    else if (computerScore > playerScore) {
+        alert("The computer won!")
+    }
+
+    else if (computerScore == playerScore) {
+        alert("It's a draw!")
+    }
+
+    else {
+        alert("Something went wrong with the tally...")
+    }
 }
 
-function setRounds()
-rpsRound();
+function setRounds() {
+    let rounds = prompt("How many rounds do you want to play?")
+    rpsRound(rounds);
+}
+
