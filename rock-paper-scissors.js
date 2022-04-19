@@ -157,8 +157,17 @@ function rpsRound(rounds) {
 }
 
 function setRounds() {
-    let rounds = prompt("How many rounds do you want to play?")
-    rpsRound(rounds);
+    let rounds = prompt("How many rounds do you want to play? Please enter 0-100")
+    
+    if (rounds > 0 && rounds <= 100) {
+        rpsRound(rounds);
+    }
+
+    else {
+        alert('Enter a valid number')
+        setRounds();
+    }
+    
 }
 
 setRounds();
